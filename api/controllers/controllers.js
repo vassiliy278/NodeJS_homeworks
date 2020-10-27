@@ -1,7 +1,7 @@
 
 const joi = require('joi')
 
-const contacts = require('./db/contacts.json')
+const contacts = require('../db/contacts.json')
 
 module.exports = class Controllers {
     constructor() {
@@ -26,7 +26,6 @@ module.exports = class Controllers {
             ...req.body
         }
         contacts.push(newContact)
-        console.log('array', contacts)
         return res.status(201).send(newContact)
     }
 
@@ -40,8 +39,6 @@ module.exports = class Controllers {
             contacts.splice(index, 1)
             res.status(200).send({"message": "contact deleted"})
         }
-        
-        console.log(contacts)
         next()
     }
 
@@ -56,7 +53,6 @@ module.exports = class Controllers {
             const arrWarn = validated.error.details[0].message
             res.status(400).send({"message": arrWarn})
         } else {
-            console.log('good')
             next()
         }
     }
@@ -83,7 +79,6 @@ module.exports = class Controllers {
             res.send({"message": "not found"})
         } else {
             const {name, email, phone} = req.body
-            console.log(req.body)
             if(!name) {
                 currentArr.name = currentArr.name
             } else{currentArr.name = name}
@@ -95,7 +90,6 @@ module.exports = class Controllers {
             } else{currentArr.phone = phone}
             res.json(contacts[contactIndex])
         }
-        console.log(contacts)
         next()
     }
 }

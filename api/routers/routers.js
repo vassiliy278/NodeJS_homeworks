@@ -3,7 +3,7 @@ require('dotenv').config()
 
 const bodyParser = require('body-parser')
 
-const controllers = require('./controllers.js')
+const controllers = require('../controllers/controllers.js')
 
 const express = require('express');
 

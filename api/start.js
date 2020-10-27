@@ -6,9 +6,9 @@ const server = express()
 
 require('dotenv').config()
 
-const router = require('./routers')
+const router = require('./routers/routers')
 
-server.get('/', cors({origin: `http://loclhost:3001`}))
+server.get('/', cors({origin: `http://loclhost:${process.env.PORT}`}))
 
 server.use('/api/', router)
 
