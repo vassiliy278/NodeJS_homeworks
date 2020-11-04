@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/vassiliy278/NodeJS_homeworks/issues"
   },
-  "homepage": "https://github.com/vassiliy278/NodeJS_homeworks#readme"
+  "homepage": "https://github.com/vassiliy278/NodeJS_homeworks#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "joi": "^17.3.0",
+    "mongodb": "^3.6.2",
+    "mongoose": "^5.10.11"
+  }
 }
